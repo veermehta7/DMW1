@@ -25,6 +25,15 @@ subset.isnull().sum()
 7.#define  function for median
 def impute_median(series):
   return series.filla(series.median())
+#obj values
+df['Item2'].fillna(str(df['Item2'].mode().values[0]) , inplace=True)
+
+#int value
+df.Age=df['Age'].transform(insert_median)
+#drop cloumn
+df.drop(['',''],asis=1
+#drop row
+df.drop([1,2,3])
 
 8.subset2=df[['work_year','job_title','salary','salary_currency','company_location']]
 subset2.head()
