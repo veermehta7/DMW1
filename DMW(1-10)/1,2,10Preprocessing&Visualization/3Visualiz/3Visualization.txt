@@ -1,0 +1,32 @@
+Practical 3 (Data Visualization)
+
+1.import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sb
+
+2.pip install seaborn
+
+3.import seaborn as sns
+
+4.df=pd.read_csv("HRD.csv")
+
+5.df.head(5)
+
+6.sns.countplot(data=df,x='Bathroom')
+
+7.sns.countplot(data=df,x='Bathroom',hue='City')
+
+8.ax=df.plot(figsize=(18,12), title='House Info'
+
+9.df['Size'].plot(kind='bar')
+
+10.df['Size'].plot(kind='hist')
+
+11.df.plot.bar()
+
+12.df.plot.hist()
+
+13.df.plot.scatter(x='Rent',y='Size')
+
+14.df.plot.hexbin(x='Rent',y='Size', gridsize=5)

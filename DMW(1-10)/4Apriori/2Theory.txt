@@ -1,0 +1,12 @@
+#Apriori:for finding frequent itemsets in a dataset for boolean association rule. Name of the 
+algorithm is Apriori because it uses prior knowledge of frequent itemset properties.
+
+#Market basket analysis is a data mining technique used by retailers to increase sales
+ by better understanding customer purchasing patterns.
+
+#itemset:A set of item together is called as item set
+#Frequent item set:A set of items is called frequent if it satisfies a minimum threshold
+value for support and confidence
+#support:shows transactions with items purchased together in a single transaction
+#confidence:shows transactions where the items are purchased one after the other.
+#Association rule mining finds interesting associations and relationships among large sets of data items.

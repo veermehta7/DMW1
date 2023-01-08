@@ -1,0 +1,19 @@
+#Data preprocessing-preprocessing of data is mainly to check the data quality
+the quality can be checked by
+1.Accuracy:to check the data entered is correct or not
+2.consistency:The same data is kept in all the places that do or do not match
+3.Completness:the data is avialable or not recorded
+
+#4 type of PreProcessing
+1.Data cleaning:Process to Remove incorrect data,incomplete data from dataset
+1.1.Handling missing Value:Standard value like not Available or no can be used
+missing values.
+1.2.Noisy:random error or containing unnecessary data
+
+2.Data Integration:combining multiple sources into a single dataset
+
+3.Data REduction:Data reduction is the process of reducing the amount of capacity 
+required to store data. Data reduction can increase storage efficiency and reduce costs.
+
+4.Data transformation is the process of converting data from one format, such as a database file,
+XML document or Excel spreadsheet, into another.

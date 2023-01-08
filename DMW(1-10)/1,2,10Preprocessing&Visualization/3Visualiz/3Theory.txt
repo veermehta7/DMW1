@@ -1,0 +1,10 @@
+#Data visualization is the graphical representation of information and data.
+ By using visual elements like charts, graphs, and maps
+
+#line chart:are used to represent relation between two data x&y on respective axis
+#histogram:it is graphical representation of set of numerical data distribution
+#scatter plot:scatter plot are used to plot data points across both axis & represent how
+each axis correlated
+#Hexbin plot:objective is to group two set numeric values hexbins help to improve visualization 
+of scatter plot
+#Bar chart:is generally very familiar chart to present categorical data

@@ -1,0 +1,2 @@
+#Similarity-is a way of measuring how data samples are related or closed to each other
+#Dissimarility:measure is to tell how much the data objects are distinct.

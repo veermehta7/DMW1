@@ -1,0 +1,37 @@
+Practical 1 (Data preprocessing)
+
+1.#import libraries
+import pandas as pd
+import numpy as np
+
+2.# Read data from dataset into dataframe 
+df = pd.read_csv('ds_salaries.csv')
+
+3.#display first 4 rows
+df.head()
+
+4.# get information about dataframe
+df.info()
+
+5.# 1.Data Reduction
+#Remove/reduce unnecessary arribute from dataframe
+subset = df[['work_year','employment_type','job_title','salary','salary_currency','company_location']]
+subset.head()
+
+6.# 2.Data Cleaning
+#find missing values
+subset.isnull().sum()
+
+7.#define  function for median
+def impute_median(series):
+  return series.filla(series.median())
+
+8.subset2=df[['work_year','job_title','salary','salary_currency','company_location']]
+subset2.head()
+
+9.# 3.Data integration
+subset3=pd.merge(subset,subset2,on='company_location')
+subset3.head()
+
+10.# 4.Data Transformation
+subset3.to_excel('ds_salaries.xlsx')

@@ -1,0 +1,88 @@
+Practical 6 (naive Bayes)
+
+1.# Import libraries
+import numpy as np
+import pandas as pd
+
+2.# Read data from dataset into dataframe 
+df = pd.read_csv('diabetes.csv')
+
+3.# Display first 5 rows
+df.head()
+
+4.# Data Reduction
+# Remove/reduce unnecessary attributes from dataframe
+subset = df[['Glucose', 'BloodPressure', 'Insulin', 'BMI', 'Age', 'Outcome']]
+subset.head()
+
+5.# Data Cleaning
+# Find missing values
+subset.isnull().sum()
+
+6.# Define function for median
+def impute_median(series):
+    return series.fillna(series.median())
+
+7.subset.Price=df['Age'].transform(impute_median)
+subset.Category=df['Outcome'].transform(impute_median)
+
+8.
+# Fill missing value of integer column with mode
+subset['Glucose'] = subset['Glucose'].fillna(subset['Glucose'].mode()[0])
+subset['BloodPressure'] = subset['BloodPressure'].fillna(subset['BloodPressure'].mode()[0])
+subset['Insulin'] = subset['Insulin'].fillna(subset['Insulin'].mode()[0])
+subset['BMI'] = subset['BMI'].fillna(subset['BMI'].mode()[0])
+subset['Age'] = subset['Age'].fillna(subset['Age'].mode()[0])
+subset['Outcome'] = subset['Outcome'].fillna(subset['Outcome'].mode()[0])
+
+9.subset.isnull().sum()
+
+10.# Data Reduction 
+subset1 = df[['Glucose', 'BloodPressure', 'Insulin']]
+subset1.head()
+
+11.display(subset,subset1)
+
+12.# Data Integration
+# Integrate/merge two dataframe
+subset2 = pd.merge(subset,subset1,left_index=True, right_index=True)
+
+13.subset2.head(20)
+
+14.# Data Transformation
+from openpyxl import Workbook
+subset2.to_excel('combine.xlsx')
+
+15.df.hist()
+
+16.# Import train_test_split function
+import sklearn.model_selection
+from sklearn.model_selection import train_test_split
+#Separate columns in dependent and independent variables
+X = df.drop("Outcome", axis= 1)
+Y = df[["Outcome"]]
+
+17.# Split dataset into tranining and test sets
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.30, random_state=1)
+
+18.# Import Gaussian Naive Bayes Model
+from sklearn.naive_bayes import GaussianNB
+
+#Create a Gaussian Classifier
+model = GaussianNB()
+
+# Train the model using traning sets
+model.fit(X_train, Y_train)
+
+# Predict the response for test datasets
+Y_pred = model.predict(X_test)
+
+19.from sklearn import metrics
+
+20.print("accuracy:", metrics.accuracy_score (Y_test, Y_pred))
+
+21.test_pred = model.predict(X_test)
+print(metrics.classification_report(Y_test, test_pred))
+print(metrics.confusion_matrix(Y_test, test_pred))
+
+
