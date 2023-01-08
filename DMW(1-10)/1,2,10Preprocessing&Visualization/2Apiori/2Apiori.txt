@@ -1,0 +1,48 @@
+Practical 2(Apriori algo)
+
+1.import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from apyori import apriori
+
+2.df = pd.read_csv("Stationery.csv")
+
+3.df.head()
+
+4.df.isnull().sum()
+
+5.df1 = df[['Item1','Item2','Item3','Item4']]
+
+6.df.info()
+
+7.df1.head()
+
+8.records = []
+for i in range(23):
+    records.append([str(df1.values[i, j]) for j in range(0, 4)])
+
+9.print(type(records))
+
+10.association_rules = apriori(records, min_support=0.0045, min_confidence=0.2, min_lift=3, min_length=2)
+association_results = list(association_rules)
+
+11.for i in range(0, len(association_results)):
+    print(association_results[i][0])
+
+12.
+for item in association_results:
+    # first index of the inner list
+    # Contains base item and add item
+    pair = item[0]
+    items = [x for x in pair]
+    print("Rule: " + items[0] + " -> " + items[1])
+
+    # second index of the inner list
+    print("Support: " + str(item[1]))
+
+    # third index of the list located at 0th
+    # of the third index of the inner list
+
+    print("Confidence: " + str(item[2][0][2]))
+    print("Lift: " + str(item[2][0][3]))
+    print("=====================================")
